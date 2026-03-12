@@ -21,8 +21,8 @@ public class ProductViewActions extends BaseClass{
 		.when()
 		.get("products");
 		
-//		List<Integer> productIds = res.jsonPath().getList("data.productId");
-		List<Integer> productIds = res.path("data.productId");
+		List<Integer> productIds = res.jsonPath().getList("data.productId");
+//		List<Integer> productIds = res.path("data.productId");
 		int min = 0 , max = productIds.size();
 		productId = productIds.get((int) (Math.random() * (max - min)) + min);
 		System.out.println(productId);
