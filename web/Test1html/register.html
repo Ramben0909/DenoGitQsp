@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+          <label for="firstname">First Name:   </label>
+          <input type="text" id="firstname" name="firstname"><br><br>
+          
+          <label for="lastname">Last Name:   </label>
+          <input type="text" id="lastname" name="lastname"><br><br>
+          
+          <label for ="email">Email:   </label>
+          <input type="email" name="email" id="email"><br><br>
+
+          <label for="password">Password:   </label>
+          <input type="password" id="password" name="password"><br><br>
+
+          <label for ="dob">Date of Birth:   </label>
+          <input type="datetime-local" id="dob" name="dob"><br><br>
+
+          <label for ="address">Address:   </label>
+          <textarea id="address" name="address" rows="4" cols="30"></textarea><br><br>
+
+          <label for ="geneder">Gender:   </label>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br><br>    
+
+          <label for="skills">Skills:   </label>
+          <input type="checkbox" id="html" name="skills" value="html">
+          <input type="checkbox" id="css" name="skills" value="css">
+          <input type="checkbox" id="js" name="skills" value="js">
+
+          <label for ="photo">Upload Photo:   </label>
+          <input type="file" id="photo" name="photo"><br><br>
+
+          <label for ="search">Search:   </label>
+          <input type="search" id="search" name="search"><br><br>
+          
+          <label for ="range">Select Range:   </label>
+          <input type="range" id="range" name="range" min="0" max="100"><br><br>
+
+          <input type="color" id="color" name="color"><br><br>
+          <input type="image" src="" alt="">
+          <input type="number" name="" id=""><br><br>
+          <input type="tel" name="" id=""><br><br>
+          <input type="url" name="" id=""><br><br>
+          state:  <select name="state" id="state">
+              <option value="select">Select State</option>
+              <option value="ap">Andhra Pradesh</option>
+              <option value="tg">Telangana</option>
+              <option value="ka">Karnataka</option>
+            </select><br><br>
+          skills : <select name="skills" id="skills">
+              <optgroup label ="frontend">
+                  <option value="html">HTML</option>
+                  <option value="css">CSS</option>
+                  <option value="js">JavaScript</option>    
+              </optgroup>
+              <optgroup label ="backend">
+                    <option value="nodejs">NodeJS</option>
+                    <option value="python">Python</option>
+                    <option value="php">PHP</option>
+              </optgroup>
+              <optgroup label ="database">
+                    <option value="mysql">MySQL</option>
+                    <option value="mongodb">MongoDB</option>
+                    <option value="postgresql">PostgreSQL</option>  
+              </optgroup>
+            </select><br><br>
+            skills :<input list="skillslist" name="skills">
+            <datalist id="skillslist">
+                <option value="HTML">
+                <option value="CSS">
+                <option value="JavaScript">
+                <option value="NodeJS">
+                <option value="Python">
+                <option value="PHP">
+                <option value="MySQL">
+                <option value="MongoDB">
+                <option value="PostgreSQL">
+            </datalist><br><br>
+          <button type="submit">Register</button>
+    </form>
+</body>
+</html>

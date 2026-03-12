@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Pattern Validation</title>
+    <style>
+        body { font-family: sans-serif; max-width: 500px; margin: 20px auto; line-height: 1.6; }
+        div { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; }
+        input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        /* Style to show input is invalid while typing */
+        input:invalid { border-color: #ffcccc; }
+        .error { color: red; display: none; font-size: 0.85em; margin-top: 4px; }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <div>
+            <label for="phone">1. Phone (10 digits):</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" 
+                oninput="document.getElementById('p-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="p-err" class="error">Must be exactly 10 digits.</span>
+        </div>
+
+        <div>
+            <label for="user">2. Username (5-12 alphanumeric):</label>
+            <input type="text" id="user" pattern="[a-zA-Z0-9]{5,12}" 
+                oninput="document.getElementById('u-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="u-err" class="error">5-12 letters or numbers only.</span>
+        </div>
+
+        <div>
+            <label for="zip">3. Zip Code:</label>
+            <input type="text" id="zip" pattern="[0-9]{5}" 
+                oninput="document.getElementById('z-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="z-err" class="error">Enter a 5-digit zip code.</span>
+        </div>
+
+        <div>
+            <label for="hex">4. Hex Color Code:</label>
+            <input type="text" id="hex" pattern="#?([a-fA-F0-9]{6})" 
+                oninput="document.getElementById('h-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="h-err" class="error">Format: #FFFFFF</span>
+        </div>
+
+        <div>
+            <label for="pass">5. Password (8+ chars, 1 Up, 1 Num):</label>
+            <input type="password" id="pass" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" 
+                oninput="document.getElementById('ps-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="ps-err" class="error">Must meet complexity requirements.</span>
+        </div>
+
+        <div>
+            <label for="date">6. Date (YYYY-MM-DD):</label>
+            <input type="text" id="date" pattern="\d{4}-\d{2}-\d{2}" 
+                oninput="document.getElementById('d-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="d-err" class="error">Format: YYYY-MM-DD</span>
+        </div>
+
+        <div>
+            <label for="alpha">7. Full Name (Letters & Spaces):</label>
+            <input type="text" id="alpha" pattern="[A-Za-z\s]+" 
+                oninput="document.getElementById('a-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="a-err" class="error">Only letters and spaces allowed.</span>
+        </div>
+
+        <div>
+            <label for="twit">8. Twitter Handle:</label>
+            <input type="text" id="twit" pattern="^@[A-Za-z0-9_]{1,15}$" 
+                oninput="document.getElementById('t-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="t-err" class="error">Must start with @ and be 1-15 chars.</span>
+        </div>
+
+        <div>
+            <label for="ver">9. Version Number:</label>
+            <input type="text" id="ver" pattern="\d+\.\d+\.\d+" 
+                oninput="document.getElementById('v-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="v-err" class="error">Format: X.X.X (e.g., 1.0.0)</span>
+        </div>
+        <div>
+            <label for="nospace">10. No Spaces Allowed:</label>
+            <input type="text" id="nospace" pattern="\S+" 
+                oninput="document.getElementById('n-err').style.display = this.checkValidity() ? 'none' : 'block'">
+            <span id="n-err" class="error">This field cannot contain spaces.</span>
+        </div>
+
+        <button type="submit">Submit Form</button>
+    </form>
+
+</body>
+</html>

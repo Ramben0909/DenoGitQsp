@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr3 = [10,20,30,40,50];
+        console.log(arr3);
+        arr3.push(4);
+        console.log(arr3);
+        arr3.unshift(0,78,56);
+        console.log(arr3);
+        arr3.pop();
+        console.log(arr3);
+        arr3.shift();
+        console.log(arr3);
+        arr3.slice(2,1);
+        console.log(arr3);
+        arr3.slice(-2,-1);
+        console.log(arr3);
+        arr3.splice(2,0,100,200);
+        console.log(arr3);
+        let arr = [5,10,15,20,25];
+        let arr2 = arr.concat(arr3);
+        console.log(arr2);
+        let revarr = arr2.reverse();
+        console.log(revarr);
+        let stre = arr2.join(",");
+        console.log(stre);
+        let arr5 = Array.of(1,2,3,4,5);
+        let aaarr5 = arr5.map((value)=>{
+            console.log(value);
+        });
+        let filterarr = arr2.filter((value)=>{
+            return value>15;
+        });
+        console.log(filterarr);
+        let sum = arr2.reduce((accumulator, currentValue)=>{
+            return accumulator + currentValue;
+        },0);
+        console.log(sum);
+        let arr10 = [3,6,1,8,4,2,9,5,7];
+        console.log(arr10.sort((a,b)=>b-a));
+        let age = [12,25,8,30,15];
+        console.log(age.every((value)=>value>=8));
+
+        console.log(age.some((value)=>value>18));
+        console.log(arr10.find((value)=>value>5));
+
+        console.log(arr10.indexOf(4));
+        for(let value of arr10){
+            console.log(value);
+        }
+        
+    </script>
+</body>
+</html>

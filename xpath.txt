@@ -1,0 +1,14 @@
+xpath 
+Types of xpath 
+approaches of xpath
+locate direct element  
+start with //
+xpath by attribute 
+by text function 
+by contains function
+by multiple attribute 
+by indexing 
+by startswith
+by endswith
+by axes
+by indepent and dependent

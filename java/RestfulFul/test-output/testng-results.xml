@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-12T09:51:31 IST" name="Default suite" finished-at="2026-03-12T09:51:47 IST" duration-ms="16258">
+    <groups>
+    </groups>
+    <test started-at="2026-03-12T09:51:31 IST" name="Default test" finished-at="2026-03-12T09:51:47 IST" duration-ms="16258">
+      <class name="ShopperWithPojo.ShopperCart">
+        <test-method is-config="true" signature="login()[pri:0, instance:ShopperWithPojo.ShopperCart@6ed3ccb2]" started-at="2026-03-12T09:51:43 IST" name="login" finished-at="2026-03-12T09:51:44 IST" duration-ms="921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="addProductToCart()[pri:0, instance:ShopperWithPojo.ShopperCart@6ed3ccb2]" started-at="2026-03-12T09:51:44 IST" name="addProductToCart" finished-at="2026-03-12T09:51:45 IST" depends-on-methods="ShopperWithPojo.ProductViewActions.fetchAllProducts" duration-ms="861" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductToCart -->
+        <test-method signature="updateCart()[pri:0, instance:ShopperWithPojo.ShopperCart@6ed3ccb2]" started-at="2026-03-12T09:51:45 IST" name="updateCart" finished-at="2026-03-12T09:51:46 IST" depends-on-methods="ShopperWithPojo.ShopperCart.addProductToCart" duration-ms="1002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateCart -->
+        <test-method signature="DeleteFromCart()[pri:0, instance:ShopperWithPojo.ShopperCart@6ed3ccb2]" started-at="2026-03-12T09:51:46 IST" name="DeleteFromCart" finished-at="2026-03-12T09:51:47 IST" depends-on-methods="ShopperWithPojo.ShopperCart.updateCart" duration-ms="921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteFromCart -->
+      </class> <!-- ShopperWithPojo.ShopperCart -->
+      <class name="ShopperWithPojo.ProductViewActions">
+        <test-method is-config="true" signature="login()[pri:0, instance:ShopperWithPojo.ProductViewActions@7c6908d7]" started-at="2026-03-12T09:51:31 IST" name="login" finished-at="2026-03-12T09:51:36 IST" duration-ms="5705" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="fetchAllProducts()[pri:0, instance:ShopperWithPojo.ProductViewActions@7c6908d7]" started-at="2026-03-12T09:51:37 IST" name="fetchAllProducts" finished-at="2026-03-12T09:51:43 IST" duration-ms="6749" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchAllProducts -->
+      </class> <!-- ShopperWithPojo.ProductViewActions -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

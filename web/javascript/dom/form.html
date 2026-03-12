@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./form.js" defer></script>
+    <style>
+        #container {
+            margin-top: 50px;
+            text-align: center;
+            border:10px solid rgb(181, 13, 13);
+            padding: 70px;
+            height : 100px;
+            width : 300px;
+        }
+        #btn4 {
+           border: 2px solid black;
+           background-color: rgb(18, 235, 76);
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <h1>0</h1> -->
+    <!-- <form action="">
+        <label for="Input">Input:</label>
+        <input type="text" id="Input" name="Input" oninput="display()">
+    </form> -->
+
+
+    <!-- <button id="inc" >Increment</button>
+    <button id="reset" >Reset</button>
+    <button id="dec">Decrement</button> -->
+
+    <!-- <div id ="container">
+        <a id="btn4"> Click me </a>
+    </div> -->
+    <!-- <h1 id ="h1">Element to display the content</h1> -->
+     <!-- <form>
+        <div>
+             <label for="username">Username:</label>
+             <input type="text" id="username" name="username" pattern="[a-zA-Z]{3,12}" title="Name field consists of 3 atmost 12 characters">
+             <span id="user-error" style="color: red; display: none;">Username is required.</span>
+        </div>
+        <div>
+             <label for="Phone">Phone:</label>
+             <input type="tel" id="phone" name="phone" pattern ="[0-9]{10}" title="Phone should be valid">
+             <span id="phone-error" style="color: red; display: none;">Please enter a valid phone number.</span>
+        </div>
+        
+        
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+     </form> -->
+
+     <form>
+        <div>
+             <label for="username">Username:</label>
+             <input type="text" id="username" name="username">
+             <span id="user-error" style="color: red; display: none;">Username is required.</span>
+        </div>
+        <div>
+             <label for="Phone">Phone:</label>
+             <input type="tel" id="phone" name="phone">
+             <span id="phone-error" style="color: red; display: none;">Please enter a valid phone number.</span>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span id="password-error" style="color: red; display: none;">Password must be at least 8 characters long and include a number.</span>
+        </div>
+        <div>
+            <button type="submit" id ="btn">Button</button>
+        </div>
+     </form>
+
+
+</body>
+</html>

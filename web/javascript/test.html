@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 10;
+        let b = 20;
+        const c = 30;
+        console.log(a, b, c);
+        console.log(typeof(a+b+c));
+        let s = "Hello, World!";
+        console.log(sym);
+        console.log(typeof(sym));
+        console.log(`Hey, I am ${s}`);
+        console.log(`The sum of a, b and c is ${a + b + c}`);
+        console.log(s.includes("World"));
+        function add(x, y) {
+            return x + y;
+        }
+        console.log(add(5, 15));
+        let d = (x, y) => {
+            console.log(this);
+            return x * y;
+            };
+        console.log(d(4, 5));
+        let y = (a,b) => a - b;
+        console.log(y(10, 4));
+        function add6(sub3) {
+            console.log("Addition function called");
+            sub3();
+            return;
+        }
+        function sub3(){
+            console.log("Subtraction function called");
+            return;
+        }
+        add6(sub3);
+        let obj = new Object();
+        obj.name = "Test Object";
+        console.log(obj);
+        delete(obj.name);
+        console.log(obj);
+        let sym = Symbol();
+        let ab={
+            sym:100,
+            name: "Alice",
+            age: 25,
+            greet: function() {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+        }
+        let current = new Date();
+        console.log(current);
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Logic Lab</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; background: #f4f4f9; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .card { padding: 10px; border-left: 4px solid #007bff; background: #f8f9fa; font-size: 14px; }
+        .label { font-weight: bold; color: #333; display: block; margin-bottom: 4px; }
+        .val { color: #007bff; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Number Logic Lab</h2>
+    <p>Enter a number to see its properties:</p>
+    <input type="number" id="numInput" placeholder="Enter a number (e.g. 145)" oninput="calculate()">
+
+    <div class="grid" id="results">
+        </div>
+</div>
+
+<script>
+    // Logic Functions
+    const fact = (n) => (n <= 1 ? 1 : n * fact(n - 1));
+    
+    const logic = {
+        "Factorial": (n) => n < 0 ? "N/A" : (n > 20 ? "Too Large" : fact(n)),
+        "Fibonacci": (n) => {
+            let s = [0, 1];
+            for (let i = 2; i < n; i++) s.push(s[i-1] + s[i-2]);
+            return n <= 0 ? "0" : s.slice(0, n).join(", ");
+        },
+        "Is Prime?": (n) => {
+            if (n <= 1) return "No";
+            for (let i = 2; i <= Math.sqrt(n); i++) if (n % i === 0) return "No";
+            return "Yes";
+        },
+        "Perfect Number?": (n) => {
+            let sum = 0;
+            for (let i = 1; i < n; i++) if (n % i === 0) sum += i;
+            return sum === n && n !== 0 ? "Yes" : "No";
+        },
+        "Armstrong?": (n) => {
+            const d = String(Math.abs(n)).split('');
+            const sum = d.reduce((acc, v) => acc + Math.pow(Number(v), d.length), 0);
+            return sum === Math.abs(n) ? "Yes" : "No";
+        },
+        "Disarium?": (n) => {
+            const sum = String(Math.abs(n)).split('').reduce((acc, d, i) => acc + Math.pow(Number(d), i + 1), 0);
+            return sum === Math.abs(n) ? "Yes" : "No";
+        },
+        "Reverse": (n) => parseFloat(n.toString().split('').reverse().join('')) * Math.sign(n),
+        "Palindrome?": (n) => {
+            const s = String(Math.abs(n));
+            return s === s.split('').reverse().join('') ? "Yes" : "No";
+        },
+        "Digit Count": (n) => String(Math.abs(n)).length,
+        "Digit Sum": (n) => String(Math.abs(n)).split('').reduce((acc, d) => acc + Number(d), 0),
+        "Strong Number?": (n) => {
+            const sum = String(Math.abs(n)).split('').reduce((acc, d) => acc + fact(Number(d)), 0);
+            return sum === Math.abs(n) ? "Yes" : "No";
+        }
+    };
+
+    function calculate() {
+        const val = parseInt(document.getElementById('numInput').value);
+        const container = document.getElementById('results');
+        container.innerHTML = "";
+
+        if (isNaN(val)) return;
+
+        for (let key in logic) {
+            const res = logic[key](val);
+            container.innerHTML += `
+                <div class="card">
+                    <span class="label">${key}</span>
+                    <span class="val">${res}</span>
+                </div>`;
+        }
+    }
+</script>
+
+</body>
+</html>
