@@ -1,10 +1,8 @@
 package ShopperWithPojo;
 
 import java.util.List;
-
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
-
 import io.restassured.response.Response;
 
 public class ProductViewActions extends BaseClass{
@@ -27,6 +25,7 @@ public class ProductViewActions extends BaseClass{
 		productId = productIds.get((int) (Math.random() * (max - min)) + min);
 		System.out.println(productId);
 		quantity = res.jsonPath().getInt("data[0].quantity");
+		System.out.println(quantity);
 		
 		res.then()
 		.assertThat().statusCode(200)
